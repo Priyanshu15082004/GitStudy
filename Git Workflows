@@ -1,0 +1,47 @@
+ 🔄 **Git Workflows**  
+
+### 🚀 **1. Git Feature Branch Workflow** (Recommended for Teams)  
+**Usage:** Work on new features without affecting the main branch.  
+1. `git checkout main` – Switch to the main branch.  
+2. `git pull origin main` – Get the latest changes.  
+3. `git checkout -b feature-branch` – Create a new feature branch.  
+4. Work on your changes and commit them.  
+5. `git push origin feature-branch` – Push to remote repository.  
+6. Open a **Pull Request (PR)** on GitHub to merge into `main`.  
+
+### 🚀 **2. Gitflow Workflow** (Best for Larger Projects)  
+**Usage:** Structured branching model for releases, hotfixes, and development.  
+- **`main`** – Stable production-ready branch.  
+- **`develop`** – Ongoing development branch.  
+- **Feature branches** – For individual features (`feature/new-feature`).  
+- **Release branches** – For preparing releases (`release/v1.0`).  
+- **Hotfix branches** – For critical bug fixes (`hotfix/fix-issue`).  
+
+🔹 **Example Commands:**  
+```sh
+git checkout develop
+git pull origin develop
+git checkout -b feature/new-feature
+# Work on the feature
+git commit -m "Added new feature"
+git push origin feature/new-feature
+```
+Once done, merge into `develop` first, then into `main` when stable.  
+
+### 🚀 **3. Forking Workflow** (For Open Source Contributions)  
+**Usage:** Used when contributing to public repositories.  
+1. **Fork the repository** on GitHub.  
+2. `git clone <your-forked-repo>` – Clone your fork.  
+3. `git checkout -b feature-branch` – Create a new branch.  
+4. Work on the feature and commit changes.  
+5. `git push origin feature-branch` – Push to your forked repo.  
+6. Open a **Pull Request (PR)** to the original repository.  
+
+### 🚀 **4. Git Rebase Workflow** (For Keeping a Clean History)  
+**Usage:** Used to maintain a linear commit history.  
+1. `git checkout feature-branch` – Switch to your branch.  
+2. `git fetch origin` – Fetch the latest updates.  
+3. `git rebase origin/main` – Apply your changes on top of the latest `main`.  
+4. If conflicts occur, resolve them and continue with `git rebase --continue`.  
+5. `git push origin feature-branch --force` – Push the updated branch.  
+ 
